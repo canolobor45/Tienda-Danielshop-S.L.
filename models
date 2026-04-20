@@ -1,0 +1,16 @@
+const mongoose = require('mongoose');
+const ProductoSchema = new mongoose.Schema({
+    nombre: { type: String, required: true },
+    precio: Number,
+    categoria: { type: mongoose.Schema.Types.ObjectId, ref: 'Categoria' } // Relación técnica
+});
+module.exports = mongoose.model('Producto', ProductoSchema);
+
+
+
+const mongoose = require('mongoose');
+const CategoriaSchema = new mongoose.Schema({
+    nombre: { type: String, required: true },
+    descripcion: String
+});
+module.exports = mongoose.model('Categoria', CategoriaSchema);
