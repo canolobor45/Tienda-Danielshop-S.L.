@@ -1,27 +1,26 @@
-// Función para crear un producto (POST)
 async function crear() {
     const data = {
-        nombre: document.getElementById('nombre').value,
-        precio: document.getElementById('precio').value
+        id: document.getElementById('prodId').value,
+        nombre: document.getElementById('prodNombre').value,
+        precio: document.getElementById('prodPrecio').value
     };
-    
     await fetch('/api/productos', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(data)
     });
-    alert("¡Producto guardado en Danielshop!");
+    alert("Producto guardado");
 }
 
-// Función para el requisito de PATCH
 async function actualizar() {
-    const id = document.getElementById('idEdit').value;
+    const id = document.getElementById('patchId').value;
     const data = { precio: document.getElementById('nuevoPrecio').value };
-
+    
+    // REQUISITO: Implementar PATCH [cite: 44, 46]
     await fetch(`/api/productos/${id}`, {
         method: 'PATCH',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(data)
     });
-    alert("¡Precio actualizado por PATCH!");
+    alert("Precio actualizado en Danielshop");
 }
