@@ -1,21 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Danielshop-S.L.</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <meta charset="UTF-8">
+    <title>Danielshop-S.L. - Gestión</title>
+    <link rel="stylesheet" href="style.css"> </head>
 <body>
-    <h1>Panel de Control - Danielshop-S.L.</h1>
-    <form id="formCrear">
-        <input type="text" id="nombre" placeholder="Producto">
-        <input type="number" id="precio" placeholder="Precio">
-        <button type="button" onclick="crear()">Guardar</button>
-    </form>
-    <hr>
-    <h2>Modificar Precio (PATCH)</h2>
-    <input type="text" id="idEdit" placeholder="ID del producto">
-    <input type="number" id="nuevoPrecio" placeholder="Nuevo precio">
-    <button type="button" onclick="actualizar()">Actualizar Parcialmente</button>
-    <script src="script.js"></script>
-</body>
+    <h1>Tienda-Danielshop-S.L. (Parte I)</h1>
+
+    <div class="container">
+        <section class="form-box">
+            <h2>Añadir Producto</h2>
+            <input type="text" id="prodId" placeholder="ID del Producto">
+            <input type="text" id="prodNombre" placeholder="Nombre">
+            <input type="number" id="prodPrecio" placeholder="Precio">
+            <button onclick="crear()">Guardar</button>
+        </section>
+
+        <section class="form-box">
+            <h2>Actualizar Precio (PATCH)</h2>
+            <input type="text" id="patchId" placeholder="ID del Producto">
+            <input type="number" id="nuevoPrecio" placeholder="Nuevo Precio">
+            <button onclick="actualizar()">Aplicar Cambio</button>
+        </section>
+    </div>
+
+    <div id="lista"></div>
+    <script src="script.js"></script> </body>
 </html>
